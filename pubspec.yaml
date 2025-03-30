@@ -1,4 +1,4 @@
-name: zombie_conga_flame_basic
+name: zombie_conga_flame
 description: "This is a Flutter version of the Zombie Conga app from the _2D Apple Games by Tutorials Ed 3.0_ book published by Kodeco, formerly raywenderlich.com."
 
 publish_to: 'none'
@@ -9,13 +9,43 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  flame: ^1.26.1
   flutter:
     sdk: flutter
+  flutter_animate: ^4.5.2
+  google_fonts: ^6.2.1
+  window_manager: ^0.4.3
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.3
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/fonts/
+    - assets/icon/
+    - assets/images/
+    - assets/music/
+    - assets/sfx/
+
+# https://pub.dev/packages/flutter_launcher_icons
+#
+#  After setting up the configuration (adding
+#  flutter_launcher_icons: ^0.14.3 under dev_dependencies,
+#  all that is left to do is run the package:
+#
+#      flutter pub get; dart run flutter_launcher_icons
+#
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  macos:
+    generate: true
+    image_path: "assets/icon/icon.png"
+
