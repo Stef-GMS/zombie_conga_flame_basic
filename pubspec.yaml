@@ -1,0 +1,21 @@
+name: zombie_conga_flame_basic
+description: "This is a Flutter version of the Zombie Conga app from the _2D Apple Games by Tutorials Ed 3.0_ book published by Kodeco, formerly raywenderlich.com."
+
+publish_to: 'none'
+
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
