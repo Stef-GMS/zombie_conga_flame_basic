@@ -12,9 +12,18 @@ void main() async {
     WidgetsFlutterBinding.ensureInitialized();
     await windowManager.ensureInitialized();
 
-    await windowManager.setMinimumSize(const Size(1024, 578)); // 768 doesn't give 16/9 ratio
-    await windowManager.setMaximumSize(const Size(2048, 1156)); // 1536 doesn't give 16/9 ratio
-    await windowManager.setSize(const Size(1024, 578)); // 768 doesn't give 16/9 ratio
+    // await windowManager.setMinimumSize(const Size(1024, 768));
+    // await windowManager.setMaximumSize(const Size(2048, 1536));
+    // await windowManager.setSize(const Size(1024, 768));
+
+    // await windowManager.setMinimumSize(const Size(1024, 578)); // 768 doesn't give 16/9 ratio
+    // await windowManager.setMaximumSize(const Size(2048, 1156)); // 1536 doesn't give 16/9 ratio
+    // await windowManager.setSize(const Size(1024, 578)); // 768 doesn't give 16/9 ratio
+
+    await windowManager.setMinimumSize(Size(width / 2, height / 2));
+    await windowManager.setMaximumSize(Size(width, height));
+    await windowManager.setSize(Size(width / 2, height / 2));
+
     await windowManager.setAspectRatio(16.0 / 9.0); // aspect ratio supported, 16:9 (1.77)
     await windowManager.setMaximizable(false);
 
@@ -33,26 +42,28 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Determine size of screen
 
-    // Get width of device.  Use longestSide for landscape apps, shortestSide for portrait.
-    gameWidth = MediaQuery.of(context).size.longestSide;
+    // // Get width of device.  Use longestSide for landscape apps, shortestSide for portrait.
+    width = MediaQuery.of(context).size.longestSide;
+    // print('Inside MainApp() Build() - width: $width');
+    //
+    // // Get height device.  Use shortestSide for landscape apps, longestSide for portrait.
+    height = MediaQuery.of(context).size.shortestSide;
+    // print('Inside MainApp() Build() - height: $height');
 
-    // Get height device.  Use shortestSide for landscape apps, longestSide for portrait.
-    gameHeight = MediaQuery.of(context).size.shortestSide;
-
-    // Set deviceSize based on width.  This is used for font scaling.
-    deviceSize = gameWidth >= 1024
-        ? 'extra large'
-        : gameWidth >= 700
-            ? 'large'
-            : gameWidth > 380
-                ? 'medium'
-                : 'small';
+    // // To help with font scaling, set deviceSize based on width.
+    // deviceSize = width >= 1024
+    //     ? 'extra large'
+    //     : width >= 700
+    //         ? 'large'
+    //         : width > 380
+    //             ? 'medium'
+    //             : 'small';
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: App(), //Text('Hello World!'),
+          child: App(),
         ),
       ),
     );
