@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zombie_conga_flame/constants/globals.dart';
-import 'package:zombie_conga_flame/view/game_app.dart';
+import 'package:zombie_conga_flame/game/view/game_app.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

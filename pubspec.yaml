@@ -9,7 +9,9 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+
   flame: ^1.26.1
+  flame_audio: ^2.11.2
   flutter:
     sdk: flutter
   flutter_animate: ^4.5.2
@@ -26,11 +28,12 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/audio/
+    - assets/audio/music/
+    - assets/audio/sfx/
     - assets/fonts/
     - assets/icon/
     - assets/images/
-    - assets/music/
-    - assets/sfx/
 
 # https://pub.dev/packages/flutter_launcher_icons
 #

@@ -18,6 +18,7 @@ class Globals {
   static const String mainMenuSprite = 'title_page.png';
   static const String youLoseSprite = 'you_lose.png';
   static const String youWinSprite = 'you_win.png';
-  static const String hitCatSound = 'hitCat.wav';
-  static const String hitEnemySound = 'hitCatLady.wav';
+
+  static const String hitCatSound = 'sfx/hit_cat.wav';
+  static const String hitEnemySound = 'sfx/hit_cat_lady.wav';
 }
